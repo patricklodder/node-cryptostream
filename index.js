@@ -1,1 +1,1 @@
-exports = module.exports = require('./lib/cryptostream.js')
+exports = module.exports = require('./lib/cryptostream.js');
