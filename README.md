@@ -10,12 +10,8 @@ Example Usage:
     var e = new EncryptStream(key);
     var d = new DecryptStream(key);
     
-    e.addListener('data', function(chunk) {
-      d.write(chunk);
-    });
-    e.addListener('end', function() {
-      d.end();
-    });
+    e.pipe(d);
+
     d.addListener('data', function(chunk) {
       if (chunk.length > 0)
         console.log('data: ' + chunk);
